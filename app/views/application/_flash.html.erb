@@ -1,0 +1,11 @@
+<div>
+  <% flash.each do |_, msg| %>
+    <div>
+      <% if msg.is_a? Array %>
+        <% msg.each { |m| %><p><%= m %></p><%}
+                                             else %>
+        <%= msg %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

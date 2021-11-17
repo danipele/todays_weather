@@ -1,0 +1,3 @@
+class Limit < ApplicationRecord
+
+end
