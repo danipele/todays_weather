@@ -1,16 +1,9 @@
 <h1>Choose the values:</h1>
-<%= form_with model: @cold_weather, url: weather_path, method: :post do |form| %>
-  <div><%= form.label :grades, 'Cold' %></div>
-  <div><%= form.number_field :grades %></div>
-  <%= form.submit 'Save' %>
+<%= form_with url: update_url, method: :post do |form| %>
+  <div><%= form.label :cold_warm, 'Between cold and warm:' %></div>
+  <div><%= form.number_field :cold_warm, value: @cold_warm_limit.degrees, step: 0.01 %> °C</div>
+  <div><%= form.label :warm_hot, 'Between warm and hot:' %></div>
+  <div><%= form.number_field :warm_hot, value: @warm_hot_limit.degrees, step: 0.01 %> °C</div>
+  <div><%= form.submit 'Save' %></div>
 <% end %>
-<%= form_with model: @warm_weather, url: weather_path, method: :post do |form| %>
-  <div><%= form.label :grades, 'Warm' %></div>
-  <div><%= form.number_field :grades %></div>
-  <%= form.submit 'Save' %>
-<% end %>
-<%= form_with model: @hot_weather, url: weather_path, method: :post do |form| %>
-  <div><%= form.label :grades, 'Hot' %></div>
-  <div><%= form.number_field :grades %></div>
-  <%= form.submit 'Save' %>
-<% end %>
+<%= link_to 'Back', root_path %>

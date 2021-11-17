@@ -1,1 +1,2 @@
-
+class BadWeatherRequest < StandardError
+end

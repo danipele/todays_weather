@@ -1,0 +1,9 @@
+<h1>Weather limits:</h1>
+<div>Cold < <%= @cold_warm_limit.degrees %>°C < Warm < <%= @warm_hot_limit.degrees %>°C < Hot</div>
+<%= link_to 'Edit', edit_path %>
+
+<h1>Enter the postcode</h1>
+<%= form_with url: find_weather_path do |form| %>
+  <div><%= form.text_field :postcode %></div>
+  <div><%= form.submit "Find today's weather" %></div>
+<% end %>
